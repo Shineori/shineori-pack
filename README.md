@@ -22,13 +22,19 @@ Set it up once and your mods update themselves whenever the pack changes.
 
 ## Modrinth App (automatic)
 
-See the Discord pin for the launch hook command (it's tested on Hasaam's PC).
+1. Create a custom instance: **Minecraft 26.3**, **Fabric 0.19.5**.
+2. Download [`shineori-sync.zip`](https://shineori.github.io/shineori-pack/kit/shineori-sync.zip). Open the instance, click the **folder icon**, and unzip it there.
+3. Instance **Settings**, **Launch hooks**, turn on custom hooks, and set **Pre-launch** to:
+   ```
+   cmd /c modrinth-hook.bat
+   ```
+4. Hit Play. It syncs before every launch. No Java install needed (it uses Modrinth's).
 
 ## CurseForge app / Vanilla launcher (one double-click)
 
 1. Make a Fabric 26.3 profile (CurseForge: Create Custom Profile; Vanilla: run the Fabric installer).
 2. Download [`shineori-sync.zip`](https://shineori.github.io/shineori-pack/kit/shineori-sync.zip) and unzip it into the profile folder (the one with `mods` in it).
-3. Double-click **`update-shineori.bat`** before you play. Needs Java 21 ([adoptium.net](https://adoptium.net)).
+3. Double-click **`update-shineori.bat`** before you play. It uses your launcher's bundled Java; if it can't find one, install Java 21+ from [adoptium.net](https://adoptium.net).
 
 ## Manual fallback
 
