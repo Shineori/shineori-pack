@@ -5,6 +5,17 @@
       "ip": "play.shineori.me",
       "link": "https://map.shineori.me",
       "maptype": "Bluemap"
+    },
+    {
+      // play.shineori.me's SRV record sends players here, and this is the address Map Link actually sees
+      "ip": "fried-insurance.tun.ply.gg:25565",
+      "link": "https://map.shineori.me",
+      "maptype": "Bluemap"
+    },
+    {
+      "ip": "fried-insurance.tun.ply.gg",
+      "link": "https://map.shineori.me",
+      "maptype": "Bluemap"
     }
   ],
   "configVersionDoNotEdit": 2

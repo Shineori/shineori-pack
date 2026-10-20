@@ -2,8 +2,7 @@ hash-format = "sha256"
 
 [[files]]
 file = "config/maplink/general.json5"
-hash = "9b88b80727ca8e2f4782c31546fc3a2d2c6fe114cc685fd267ebc6cfff8542ec"
-preserve = true
+hash = "3fc2022f38087fa2757ae062c8c4086413774d997b0b24fc5858c3beae8e94f0"
 
 [[files]]
 file = "mods/appleskin.pw.toml"
