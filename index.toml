@@ -85,6 +85,11 @@ hash = "4d3d2ad41a037af6f78e2a6c2908c4098bb0b5c03ad0d2711a0c0c6df5e7a172"
 metafile = true
 
 [[files]]
+file = "mods/polydecorations.pw.toml"
+hash = "c447cab6bc40b4c95b80cb4d4b5b3828464582e483746a19f49012c6f7b4580c"
+metafile = true
+
+[[files]]
 file = "mods/polymer.pw.toml"
 hash = "c2b34e0c7fb9589b7fde83f0764998afc7f46024f58850b908c3a280c0a1bd3c"
 metafile = true
