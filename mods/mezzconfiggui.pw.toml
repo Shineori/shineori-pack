@@ -1,0 +1,13 @@
+name = "MezzConfigGUI"
+filename = "mezz_config_gui-26.3-fabric-mc26.3-0.6.2.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/BOHUKqOz/versions/2uTmuupR/mezz_config_gui-26.3-fabric-mc26.3-0.6.2.jar"
+hash-format = "sha512"
+hash = "8f86e8bdf278cf4099bce69bbb78f60c75e26969461deedf5c3db9aeb6372738c95f23a93bf86d05672c8c4d130c733632253da1d9fdd58509f3515fe5f80aeb"
+
+[update]
+[update.modrinth]
+mod-id = "BOHUKqOz"
+version = "2uTmuupR"

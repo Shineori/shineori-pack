@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "serverEntries": [
+    {
+      "ip": "play.shineori.me",
+      "link": "https://map.shineori.me",
+      "maptype": "Bluemap"
+    }
+  ],
+  "configVersionDoNotEdit": 2
+}

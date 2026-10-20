@@ -1,0 +1,130 @@
+hash-format = "sha256"
+
+[[files]]
+file = "config/maplink/general.json5"
+hash = "9b88b80727ca8e2f4782c31546fc3a2d2c6fe114cc685fd267ebc6cfff8542ec"
+preserve = true
+
+[[files]]
+file = "mods/appleskin.pw.toml"
+hash = "ff675667f4c6924a9eaebc42dc2df5306dc5e8b005e931d9d8b73cebad67d5eb"
+metafile = true
+
+[[files]]
+file = "mods/cloth-config.pw.toml"
+hash = "2b9727522c90a979eb9671ad7c5421443d91391b0697d1772146e6bfa19cb3c1"
+metafile = true
+
+[[files]]
+file = "mods/entity-model-features.pw.toml"
+hash = "d00381d69d0dba1911229acbc2f89887026d72cc0270a27c94c1e7d06a61fd19"
+metafile = true
+
+[[files]]
+file = "mods/entitytexturefeatures.pw.toml"
+hash = "bdabe52b4c88b2f57ab21c130c3d00a1ebae771085d31b44674d13c35135feff"
+metafile = true
+
+[[files]]
+file = "mods/fabric-api.pw.toml"
+hash = "6dae83195be2f55ba9d38d72bb0da399f8e90b60f70fb4d792820c4f0b1bac43"
+metafile = true
+
+[[files]]
+file = "mods/fabric-language-kotlin.pw.toml"
+hash = "1811d49906aa7a1e7f1230535c6fec91be45129d028f7900cf35571a497e42b3"
+metafile = true
+
+[[files]]
+file = "mods/ferrite-core.pw.toml"
+hash = "069d81cab53c0141459ad4d70bcf3e10f17652f24cc62d3b4a0fc2cd2b700871"
+metafile = true
+
+[[files]]
+file = "mods/jade.pw.toml"
+hash = "6a9c2f3995f8bf6d9b5dc0f711f22665c3c0ad488b0f4f04cf423c6f1f305ba6"
+metafile = true
+
+[[files]]
+file = "mods/jei.pw.toml"
+hash = "5434ef1c12cf871ace79467dc46dc7905a3bfe6985abb7078c93a45489cc1125"
+metafile = true
+
+[[files]]
+file = "mods/lambdynamiclights.pw.toml"
+hash = "1bcd8fa2d0c2c3390361736420236c2a5331002ae36bb5cba5a062b8708b5ee9"
+metafile = true
+
+[[files]]
+file = "mods/lithium.pw.toml"
+hash = "a39389e4c813b70b984a0c8aed769825b32c321ee0b9aed1151d92cb38f77357"
+metafile = true
+
+[[files]]
+file = "mods/maplink.pw.toml"
+hash = "5eb209d1981fc144038a5c62549ac5d1bfacce2efe8554fbabda1fe6ac5826a9"
+metafile = true
+
+[[files]]
+file = "mods/mezzconfig.pw.toml"
+hash = "8257e769f3b2db4005d1eb546ba47f5f8aade30c8b23f0155be1ae40a46f0dfc"
+metafile = true
+
+[[files]]
+file = "mods/mezzconfiggui.pw.toml"
+hash = "b18ed917bbc1f960e797e17821adc82b4fca0fb8db3f91cb4abbf7b2dccd5b38"
+metafile = true
+
+[[files]]
+file = "mods/modmenu.pw.toml"
+hash = "cd05db76d670773ace1184abdd46126e7b7c75c2b70da82e1764cff9544c4269"
+metafile = true
+
+[[files]]
+file = "mods/placeholder-api.pw.toml"
+hash = "4d3d2ad41a037af6f78e2a6c2908c4098bb0b5c03ad0d2711a0c0c6df5e7a172"
+metafile = true
+
+[[files]]
+file = "mods/polymer.pw.toml"
+hash = "c2b34e0c7fb9589b7fde83f0764998afc7f46024f58850b908c3a280c0a1bd3c"
+metafile = true
+
+[[files]]
+file = "mods/sodium.pw.toml"
+hash = "0bf314c578473659bd89915114cac8e60994988f405218726a48d35b06e9316c"
+metafile = true
+
+[[files]]
+file = "mods/veinminer-client.pw.toml"
+hash = "81c59a49b4530211d79889eaf084a324459dd333315ee20740f52919869e469e"
+metafile = true
+
+[[files]]
+file = "mods/veinminer.pw.toml"
+hash = "9507bfab8115ee84fc1197592663f83b6e7d8b565294d0af0e44a0c9750c4688"
+metafile = true
+
+[[files]]
+file = "mods/xaeros-minimap.pw.toml"
+hash = "2370e1441f428ef911b96cb4511c938a7a327a2fa97045949c5530da1c0635e8"
+metafile = true
+
+[[files]]
+file = "mods/xaeros-world-map.pw.toml"
+hash = "e64b0d3e2bab7c261fa936c79c7b33baba9d8b16ac5171e8687ba71094903629"
+metafile = true
+
+[[files]]
+file = "resourcepacks/Shineori-SMP-Textures.zip"
+hash = "1b587ebd269e6beebc600f3318d2c0178ba7de0eb63c8b5f55b5dc9216e83602"
+
+[[files]]
+file = "resourcepacks/fresh-animations.pw.toml"
+hash = "37d652881626cec7b328758d6193f57fa679230ce18fc2ce1c21969c2ce7a5e1"
+metafile = true
+
+[[files]]
+file = "servers.dat"
+hash = "3f1befe44eb7a07b06f8bced5736595328df496765c8530cfbb71c03fc3a3097"
+preserve = true

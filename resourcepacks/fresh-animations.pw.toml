@@ -1,0 +1,13 @@
+name = "Fresh Animations"
+filename = "FreshAnimations_v1.11_26.1+.zip"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/50dA9Sha/versions/KRebM55x/FreshAnimations_v1.11_26.1%2B.zip"
+hash-format = "sha512"
+hash = "805fb39d5739b2987e3cf341934567532e98875f738014cfd90ede8a1ababfa2af63ace1762d0fb61475dd67f32dd539044d80e2e3de102dc94beca0e53eb368"
+
+[update]
+[update.modrinth]
+mod-id = "50dA9Sha"
+version = "KRebM55x"
