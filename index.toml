@@ -95,6 +95,11 @@ hash = "c2b34e0c7fb9589b7fde83f0764998afc7f46024f58850b908c3a280c0a1bd3c"
 metafile = true
 
 [[files]]
+file = "mods/server-backpacks.pw.toml"
+hash = "b4db5c6ab05302e08a77fe4eb89dfa43f425af844b5273c596d6bbc5654c8d55"
+metafile = true
+
+[[files]]
 file = "mods/sodium.pw.toml"
 hash = "0bf314c578473659bd89915114cac8e60994988f405218726a48d35b06e9316c"
 metafile = true
