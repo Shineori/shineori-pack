@@ -29,7 +29,7 @@ if not defined JAVA (
 )
 
 echo Syncing Shineori SMP mods...
-"%JAVA%" -jar packwiz-installer-bootstrap.jar -g "%PACK%"
+"%JAVA%" -jar packwiz-installer-bootstrap.jar "%PACK%"
 if errorlevel 1 (
   echo.
   echo  Sync failed. Screenshot this window and send it to Hasaam.

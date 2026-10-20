@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shineori SMP Mods</title>
+<meta name="description" content="Set up the auto-updating Shineori SMP modpack in Prism, Modrinth, CurseForge or the vanilla launcher.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0f1114; --panel: #171a1f; --panel2: #1e2229; --line: #2a2f38;
+    --text: #e8eaed; --muted: #9aa3ae; --grass: #6cc24a; --pink: #ff4d8d;
+    --prism: #b38cff; --modrinth: #1bd96a; --cf: #f16436;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, system-ui, sans-serif; }
+  a { color: var(--grass); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px 80px; }
+  header { padding: 48px 0 24px; }
+  .eyebrow { font-family: Silkscreen, monospace; color: var(--grass); letter-spacing: .08em; font-size: 14px; }
+  h1 { font-family: Silkscreen, monospace; font-weight: 400; font-size: clamp(30px, 6vw, 52px); line-height: 1.1; margin: 8px 0 12px; }
+  .lede { color: var(--muted); max-width: 640px; margin: 0; }
+  .flow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 24px 0 8px; font-size: 14px; }
+  .chip { background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }
+  .arrow { color: var(--muted); }
+  .vanilla { margin-top: 16px; background: var(--panel); border-left: 4px solid var(--grass); padding: 12px 16px; border-radius: 8px; color: var(--muted); font-size: 15px; }
+
+  .tabs { position: sticky; top: 0; z-index: 5; background: var(--bg); display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 16px 0; }
+  .tab { appearance: none; border: 2px solid var(--line); background: var(--panel); color: var(--text); border-radius: 12px; padding: 12px 10px; font: 600 15px Inter, sans-serif; cursor: pointer; text-align: left; }
+  .tab small { display: block; color: var(--muted); font-weight: 400; font-size: 13px; }
+  .tab[aria-selected="true"] { border-color: var(--c); background: color-mix(in srgb, var(--c) 12%, var(--panel)); }
+  .tab .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--c); margin-right: 6px; }
+
+  .pane { display: none; }
+  .pane.on { display: block; }
+  .step { display: grid; grid-template-columns: 44px 1fr; gap: 16px; margin: 28px 0; }
+  .num { width: 44px; height: 44px; border-radius: 10px; background: var(--c); color: #0b0c0e; display: grid; place-items: center; font-family: Silkscreen, monospace; font-size: 20px; }
+  .step h3 { margin: 6px 0 6px; font-size: 19px; }
+  .step p { margin: 0 0 12px; color: var(--muted); }
+  .step p b { color: var(--text); }
+  figure { margin: 0; }
+  figure img { width: 100%; height: auto; display: block; border-radius: 10px; border: 1px solid var(--line); cursor: zoom-in; }
+  figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; }
+  .pink { color: var(--pink); font-weight: 600; }
+
+  .cmd { display: flex; gap: 8px; align-items: stretch; margin: 6px 0 14px; }
+  .cmd code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; background: #0b0d10; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; font: 500 13.5px "JetBrains Mono", monospace; color: #d7f7c6; }
+  .copy { flex: none; border: 0; border-radius: 8px; padding: 0 14px; background: var(--c); color: #0b0c0e; font: 700 14px Inter, sans-serif; cursor: pointer; }
+  .btn { display: inline-block; background: var(--c); color: #0b0c0e; text-decoration: none; font-weight: 700; padding: 10px 16px; border-radius: 8px; margin: 2px 0 12px; }
+
+  .tree { background: #0b0d10; border: 1px solid var(--line); border-radius: 10px; padding: 16px; font: 500 14px/1.9 "JetBrains Mono", monospace; overflow-x: auto; white-space: pre; }
+  .tree .hl { color: var(--cf); }
+  .tree .dim { color: #5d6672; }
+  .console { background: #0c0c0c; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; font: 500 13.5px/1.7 "JetBrains Mono", monospace; }
+  .console .bar { background: #202020; color: #ccc; padding: 6px 12px; font-family: Inter, sans-serif; font-size: 12.5px; }
+  .console pre { margin: 0; padding: 12px 14px; color: #cfcfcf; white-space: pre-wrap; }
+  .console .ok { color: #6cc24a; }
+  .note { font-size: 13px; color: var(--muted); }
+
+  .done { margin-top: 36px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: grid; gap: 14px; grid-template-columns: 1fr 1.2fr; align-items: center; }
+  .done h3 { margin: 0 0 6px; font-family: Silkscreen, monospace; font-weight: 400; color: var(--grass); }
+  .done p { margin: 0; color: var(--muted); }
+
+  .faq { margin-top: 48px; }
+  .faq h2 { font-family: Silkscreen, monospace; font-weight: 400; font-size: 24px; }
+  details { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin: 8px 0; }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { color: var(--muted); margin: 8px 0 0; }
+
+  dialog { border: 0; padding: 0; background: transparent; max-width: 96vw; }
+  dialog img { max-width: 96vw; max-height: 92vh; border-radius: 10px; display: block; }
+  dialog::backdrop { background: rgba(0,0,0,.85); }
+
+  @media (max-width: 640px) {
+    .tabs { grid-template-columns: 1fr; position: static; }
+    .step { grid-template-columns: 1fr; gap: 8px; }
+    .done { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">play.shineori.me</div>
+    <h1>Shineori SMP Mods</h1>
+    <p class="lede">Set this up once and your mods update themselves. Whenever Hasaam adds or removes a mod, you get it automatically next time you play. No more redownloading zips from Discord.</p>
+    <div class="flow">
+      <span class="chip">Hasaam updates the pack</span><span class="arrow">→</span>
+      <span class="chip">one link</span><span class="arrow">→</span>
+      <span class="chip">your launcher syncs on Play</span><span class="arrow">→</span>
+      <span class="chip">✅ same mods as everyone</span>
+    </div>
+    <div class="vanilla">Don't want mods? You can still join with plain vanilla Minecraft. The pack just adds the minimap, JEI, textures and quality-of-life stuff.</div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab" role="tab" data-tab="prism" style="--c:var(--prism)" aria-selected="true"><span class="dot"></span>Prism Launcher<small>Fully automatic · recommended</small></button>
+    <button class="tab" role="tab" data-tab="modrinth" style="--c:var(--modrinth)" aria-selected="false"><span class="dot"></span>Modrinth App<small>Fully automatic</small></button>
+    <button class="tab" role="tab" data-tab="cf" style="--c:var(--cf)" aria-selected="false"><span class="dot"></span>CurseForge / Vanilla<small>One double-click</small></button>
+  </nav>
+
+  <!-- PRISM -->
+  <section class="pane on" id="prism" style="--c:var(--prism)">
+    <div class="step"><div class="num">1</div><div>
+      <h3>Make a new instance</h3>
+      <p>Click <b>Add Instance</b>. Name it anything, pick <b>26.3</b>, choose <b>Fabric</b> as the mod loader and leave it on <b>0.19.5</b>. Hit <b>OK</b>.</p>
+      <figure><img src="guide/img/prism-1-new-instance.png" alt="Prism New Instance dialog with name, 26.3, Fabric and 0.19.5 highlighted" loading="lazy"><figcaption>Follow the <span class="pink">pink numbers</span> in order.</figcaption></figure>
+    </div></div>
+    <div class="step"><div class="num">2</div><div>
+      <h3>Drop in the updater</h3>
+      <p>Download the updater, then click your instance and hit <b>Folder</b> (①). Put the jar inside the <b>minecraft</b> folder (make it if it's not there yet).</p>
+      <a class="btn" href="kit/packwiz-installer-bootstrap.jar">⬇ packwiz-installer-bootstrap.jar</a>
+      <figure><img src="guide/img/prism-2-instance.png" alt="Prism main window with Folder and Edit buttons highlighted" loading="lazy"></figure>
+      <figure style="margin-top:12px"><img src="guide/img/prism-3-jar-in-folder.png" alt="File Explorer showing packwiz-installer-bootstrap.jar inside the instance's minecraft folder" loading="lazy"><figcaption>It should look like this: the jar sitting inside <b>instances › your instance › minecraft</b>.</figcaption></figure>
+    </div></div>
+    <div class="step"><div class="num">3</div><div>
+      <h3>Add the pre-launch command</h3>
+      <p>Back in Prism, hit <b>Edit</b> (② above), then <b>Settings</b> › <b>Custom Commands</b>. Tick <b>Override Global Settings</b> and paste this into <b>Pre-launch Command</b>:</p>
+      <div class="cmd"><code>"$INST_JAVA" -jar packwiz-installer-bootstrap.jar https://shineori.github.io/shineori-pack/pack.toml</code><button class="copy">Copy</button></div>
+      <figure><img src="guide/img/prism-4-prelaunch.png" alt="Prism instance settings, Custom Commands tab with the pre-launch command filled in" loading="lazy"></figure>
+    </div></div>
+    <div class="step"><div class="num">4</div><div>
+      <h3>Hit Launch</h3>
+      <p>A little window flashes up and grabs the mods, then the game starts. It does this check every launch, so you're always up to date. Join <b>play.shineori.me</b> (it's already in your server list).</p>
+      <figure><img src="guide/img/sync-window.png" alt="packwiz-installer progress window downloading mods" loading="lazy" style="max-width:480px"></figure>
+    </div></div>
+  </section>
+
+  <!-- MODRINTH -->
+  <section class="pane" id="modrinth" style="--c:var(--modrinth)">
+    <div class="step"><div class="num">1</div><div>
+      <h3>New instance → Custom setup</h3>
+      <p>In your Library, click <b>+ New instance</b>, then <b>Custom setup</b>.</p>
+      <figure><img src="guide/img/modrinth-1-create.png" alt="Modrinth Create instance dialog with Custom setup highlighted" loading="lazy"></figure>
+    </div></div>
+    <div class="step"><div class="num">2</div><div>
+      <h3>Fabric, 26.3, create</h3>
+      <p>Name it anything, pick <b>Fabric</b>, game version <b>26.3</b>, leave loader version on Stable, and hit <b>Create instance</b>.</p>
+      <figure><img src="guide/img/modrinth-2-custom.png" alt="Modrinth custom setup with name, Fabric, 26.3 and Create instance highlighted" loading="lazy"></figure>
+    </div></div>
+    <div class="step"><div class="num">3</div><div>
+      <h3>Unzip the sync kit into the instance</h3>
+      <p>Download the kit. On the instance page, click <b>⋮</b> › <b>Open folder</b>, and unzip the kit right there (next to <code>mods</code>, <code>config</code>, etc).</p>
+      <a class="btn" href="kit/shineori-sync.zip">⬇ shineori-sync.zip</a>
+      <figure><img src="guide/img/modrinth-3-open-folder.png" alt="Modrinth instance page with the three-dot menu open and Open folder highlighted" loading="lazy"></figure>
+    </div></div>
+    <div class="step"><div class="num">4</div><div>
+      <h3>Add the launch hook</h3>
+      <p>Click the <b>⚙</b> gear › <b>Launch hooks</b>, turn on <b>Custom game launch hooks</b>, and paste this into <b>Pre-launch</b> exactly (the weird part is needed, Modrinth is picky):</p>
+      <div class="cmd"><code>cmd /c set NoDefaultCurrentDirectoryInExePath=&amp; modrinth-hook.bat</code><button class="copy">Copy</button></div>
+      <figure><img src="guide/img/modrinth-4-hook.png" alt="Modrinth instance settings, Launch hooks page with the pre-launch hook filled in" loading="lazy"></figure>
+    </div></div>
+    <div class="step"><div class="num">5</div><div>
+      <h3>Hit Play</h3>
+      <p>The updater window pops up, grabs everything, and the game launches. Every Play checks for updates. No Java install needed, it uses Modrinth's.</p>
+    </div></div>
+  </section>
+
+  <!-- CURSEFORGE / VANILLA -->
+  <section class="pane" id="cf" style="--c:var(--cf)">
+    <div class="step"><div class="num">1</div><div>
+      <h3>Make a Fabric 26.3 profile</h3>
+      <p><b>CurseForge:</b> Minecraft › <b>Create Custom Profile</b> › version 26.3, loader Fabric.<br><b>Vanilla launcher:</b> run the <a href="https://fabricmc.net/use/installer/">Fabric installer</a> for 26.3 and pick that profile.</p>
+    </div></div>
+    <div class="step"><div class="num">2</div><div>
+      <h3>Unzip the sync kit into the profile folder</h3>
+      <p>CurseForge: profile <b>⋯</b> › <b>Open Folder</b>. Vanilla: your <code>.minecraft</code> folder (or the Fabric profile's game directory). Unzip the kit there so it sits next to <code>mods</code>:</p>
+      <a class="btn" href="kit/shineori-sync.zip">⬇ shineori-sync.zip</a>
+      <div class="tree"><span class="dim">📁 your profile folder</span>
+├── 📁 mods
+├── 📁 config
+├── 📁 resourcepacks
+├── <span class="hl">☕ packwiz-installer-bootstrap.jar</span>   <span class="dim">← from the kit</span>
+├── <span class="hl">🟠 update-shineori.bat</span>              <span class="dim">← double-click this</span>
+└── <span class="dim">   modrinth-hook.bat                 (ignore, Modrinth only)</span></div>
+      <p class="note">Illustration, your folder will have a few more things in it.</p>
+    </div></div>
+    <div class="step"><div class="num">3</div><div>
+      <h3>Double-click before you play</h3>
+      <p>Run <b>update-shineori.bat</b> whenever you're about to play (or when Hasaam says "new mod!"). It finds your launcher's Java on its own, syncs, then closes.</p>
+      <div class="console"><div class="bar">Shineori SMP mod sync</div><pre>Syncing Shineori SMP mods...
+(1/26) Downloaded Fabric API
+(2/26) Downloaded Sodium
+...
+(26/26) Downloaded Fabric Language Kotlin
+Finished successfully!
+
+<span class="ok"> All synced! Go play :)</span></pre></div>
+      <p class="note">If it says it can't find Java, launch Minecraft once from your launcher, or install Java 21+ from <a href="https://adoptium.net">adoptium.net</a>.</p>
+    </div></div>
+  </section>
+
+  <div class="done">
+    <div><h3>That's it ✨</h3><p>From now on, mods just show up. If something breaks, screenshot it and send it to Hasaam.</p></div>
+    <figure><img src="guide/img/sync-window.png" alt="Updater progress window" loading="lazy"></figure>
+  </div>
+
+  <section class="faq">
+    <h2>Questions</h2>
+    <details><summary>Will it delete my own extra mods?</summary><p>It only manages files that are part of the pack. If you remove a pack mod by hand, it comes back next sync. Mods you added yourself aren't touched.</p></details>
+    <details><summary>Will it reset my server list or settings?</summary><p>No. The server list and Map Link config are only written the first time, after that your changes are kept.</p></details>
+    <details><summary>Can I just get the files?</summary><p>Yep, ask Hasaam for the latest .mrpack or CurseForge .zip. You just won't get auto-updates.</p></details>
+  </section>
+</div>
+
+<dialog id="zoom"><img alt=""></dialog>
+<script>
+  // Tabs (remembers your launcher)
+  const tabs = document.querySelectorAll('.tab');
+  function show(id) {
+    tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.tab === id));
+    document.querySelectorAll('.pane').forEach(p => p.classList.toggle('on', p.id === id));
+    try { localStorage.setItem('shineori-tab', id); } catch (e) {}
+  }
+  tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.tab)));
+  const hash = location.hash.slice(1);
+  let saved = null; try { saved = localStorage.getItem('shineori-tab'); } catch (e) {}
+  show(['prism', 'modrinth', 'cf'].includes(hash) ? hash : (saved || 'prism'));
+
+  // Copy buttons
+  document.querySelectorAll('.copy').forEach(b => b.addEventListener('click', async () => {
+    const text = b.previousElementSibling.textContent;
+    try { await navigator.clipboard.writeText(text); b.textContent = 'Copied!'; }
+    catch (e) { b.textContent = 'Select + Ctrl+C'; }
+    setTimeout(() => b.textContent = 'Copy', 1600);
+  }));
+
+  // Click-to-zoom screenshots
+  const dlg = document.getElementById('zoom');
+  document.querySelectorAll('figure img').forEach(img => img.addEventListener('click', () => {
+    dlg.querySelector('img').src = img.src; dlg.showModal();
+  }));
+  dlg.addEventListener('click', () => dlg.close());
+</script>
+</body>
+</html>
