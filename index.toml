@@ -26,7 +26,7 @@ metafile = true
 
 [[files]]
 file = "mods/fabric-api.pw.toml"
-hash = "6dae83195be2f55ba9d38d72bb0da399f8e90b60f70fb4d792820c4f0b1bac43"
+hash = "a4c31d16582621909eba9f06a34f03114d212c7e684c8dbc9991fb12a42e043b"
 metafile = true
 
 [[files]]
@@ -46,7 +46,7 @@ metafile = true
 
 [[files]]
 file = "mods/jei.pw.toml"
-hash = "5434ef1c12cf871ace79467dc46dc7905a3bfe6985abb7078c93a45489cc1125"
+hash = "de0387d1da147232feeca597aeb7af2eeee1129d98c94bebf918d4ff37122ae9"
 metafile = true
 
 [[files]]
@@ -56,7 +56,7 @@ metafile = true
 
 [[files]]
 file = "mods/lithium.pw.toml"
-hash = "a39389e4c813b70b984a0c8aed769825b32c321ee0b9aed1151d92cb38f77357"
+hash = "b44f3ab71e52f1aaae97cf8644f2316042de8b7777d6b6794567c8c7d220bd2b"
 metafile = true
 
 [[files]]
@@ -66,7 +66,7 @@ metafile = true
 
 [[files]]
 file = "mods/mezzconfig.pw.toml"
-hash = "8257e769f3b2db4005d1eb546ba47f5f8aade30c8b23f0155be1ae40a46f0dfc"
+hash = "16b95abc59207ae707b194bb626f792d4ca3d63ce95192118b3d006d0bd8cce0"
 metafile = true
 
 [[files]]
@@ -86,12 +86,12 @@ metafile = true
 
 [[files]]
 file = "mods/polydecorations.pw.toml"
-hash = "c447cab6bc40b4c95b80cb4d4b5b3828464582e483746a19f49012c6f7b4580c"
+hash = "66dc20f7087d0d26c471e0bedaba8ff29def7fa71fc09f0a88b844e4f876d53f"
 metafile = true
 
 [[files]]
 file = "mods/polymer.pw.toml"
-hash = "c2b34e0c7fb9589b7fde83f0764998afc7f46024f58850b908c3a280c0a1bd3c"
+hash = "81e0bd51f0b5263927aeb4ccdae36a23b8c118a19f9cc8f9da06495e2c5ce5f1"
 metafile = true
 
 [[files]]
@@ -116,12 +116,12 @@ metafile = true
 
 [[files]]
 file = "mods/xaeros-minimap.pw.toml"
-hash = "2370e1441f428ef911b96cb4511c938a7a327a2fa97045949c5530da1c0635e8"
+hash = "14e96b12f10a1f2920cdcec89b4d16e452bec4689e117b38b4c0f759145aaf7f"
 metafile = true
 
 [[files]]
 file = "mods/xaeros-world-map.pw.toml"
-hash = "e64b0d3e2bab7c261fa936c79c7b33baba9d8b16ac5171e8687ba71094903629"
+hash = "cbb9808546870ecb0a7befebb14df0a11383b1aeafd175a77a0fc4caee44c6f2"
 metafile = true
 
 [[files]]
@@ -130,7 +130,7 @@ hash = "1b587ebd269e6beebc600f3318d2c0178ba7de0eb63c8b5f55b5dc9216e83602"
 
 [[files]]
 file = "resourcepacks/fresh-animations.pw.toml"
-hash = "37d652881626cec7b328758d6193f57fa679230ce18fc2ce1c21969c2ce7a5e1"
+hash = "c9f80e36cc2baa3650e345213e80881625c16fc64d3990c2d651e4302c2b9303"
 metafile = true
 
 [[files]]
