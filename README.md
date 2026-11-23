@@ -13,9 +13,11 @@ Set it up once and your mods update themselves whenever the pack changes.
 
 ## 🟣 Prism Launcher (fully automatic, recommended)
 
-1. **Add Instance**: Minecraft **26.3**, mod loader **Fabric**, version **0.19.5**.
+1. **Add Instance**: Minecraft **26.3**, mod loader **Fabric**, version **0.20.1** (the top of the list). *The screenshot still shows 0.19.5, so pick 0.20.1 anyway.*
 
    ![Prism new instance](guide/img/prism-1-new-instance.png)
+
+   > **Already set up on 0.19.5?** Right-click your instance › **Edit** › **Version**, select **Fabric Loader**, click **Change version** and pick **0.20.1**.
 
 2. Download [`packwiz-installer-bootstrap.jar`](https://shineori.github.io/shineori-pack/kit/packwiz-installer-bootstrap.jar). Click the instance, **Folder**, and put the jar inside the `minecraft` folder.
 
