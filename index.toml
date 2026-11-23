@@ -15,6 +15,11 @@ hash = "2b9727522c90a979eb9671ad7c5421443d91391b0697d1772146e6bfa19cb3c1"
 metafile = true
 
 [[files]]
+file = "mods/disabilities.pw.toml"
+hash = "b66d895db5d9e04f6a40459c9a31cfbc39aeeb31bf5c7c89f6fd80a058e785f0"
+metafile = true
+
+[[files]]
 file = "mods/entity-model-features.pw.toml"
 hash = "d00381d69d0dba1911229acbc2f89887026d72cc0270a27c94c1e7d06a61fd19"
 metafile = true

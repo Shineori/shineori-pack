@@ -1,0 +1,13 @@
+name = "Disabilities"
+filename = "disabilities-0.5.0+26.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/fD9Eezq4/versions/sa9kC1R9/disabilities-0.5.0%2B26.3.jar"
+hash-format = "sha512"
+hash = "629bec69c21bfe53c8461af996fc91c8578af04ee4e2a32409dc622feb7e61c1925c029cc22e69aeb819b1f191b84d515e48b96343e7b94944a893c9ce168861"
+
+[update]
+[update.modrinth]
+mod-id = "fD9Eezq4"
+version = "sa9kC1R9"
