@@ -1,12 +1,12 @@
 name = "Shineori SMP"
 author = "Shineori"
-version = "1.1.6"
+version = "1.1.7"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "fd2c0c65ae3d2515e4416481ad635ee39254e0c0ed634c24e60fe691f9a5994c"
+hash = "c4f84c356b53e10ab6d44fad06cc1879b046a716341184af7f7650cdfed4993c"
 
 [versions]
 fabric = "0.20.1"
